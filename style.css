@@ -1,0 +1,213 @@
+html {
+    background-color: #dce0e8;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+}
+
+#maintitle {
+    font-family: 'Copperplate Gothic Bold Regular';
+    font-size: 6vw;
+    justify-self: center;
+}
+
+@font-face {
+    font-family: 'Copperplate Gothic Bold Regular';
+    src: url(/.assets/COPRGTB.woff) format('woff');
+    font-display: swap;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.imgBox {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.del1o2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.center {
+    justify-self: center;
+    align-self: center;
+}
+
+header,
+main,
+nav,
+footer {
+    padding: 3%;
+}
+
+header,
+footer {
+    display: grid;
+    gap: 10px;
+    background-color: #eff1f5;
+}
+
+nav {
+    padding: 5%;
+    display: grid;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: #9ca0b0;
+
+}
+
+/* nav a:hover {
+    font-weight: 800;
+    color: black;
+} */
+
+header a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+nav a::after { /* Beredd att förklara det här "I CSS är: :after ett pseudo-element som skapar ett virtuellt underordnat element omedelbart efter det valda elementets faktiska innehåll." */
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: black;
+    transition: width 0.25s ease, left 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+div .noGap {
+    gap: 0;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.textPadding {
+    padding-bottom: 0.3em;
+}
+
+.styckesPadding {
+    padding-bottom: 0.6em;
+}
+
+.gridItem {
+    display: grid;
+    padding: 5%;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #9ca0b0;
+}
+
+.del1och2 {
+
+    p,
+    .downloadLankar {
+        align-self: end;
+    }
+
+    .downloadLankar {
+        display: grid;
+        gap: 5px;
+    }
+
+    .imgBox {
+        align-self: center;
+    }
+}
+
+.bookGrid .bookGridItem {
+    display: grid;
+    padding: 5%;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #9ca0b0;
+
+    .imgBox {
+        aspect-ratio: auto;
+        padding: 0%;
+    }
+}
+
+.footerGrid .footerGridItem {
+    display: grid;
+    padding: 5%;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #9ca0b0;
+}
+
+.backToStart {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    justify-self: center;
+    align-self: center;
+}
+
+#ragnarsimg {
+    border-radius: 10px;
+}
+
+.downloadTITLE {
+    font-size: 2em;
+    padding-bottom: 5px;
+}
+
+.downloadOBS {
+    padding-top: 15px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+@media (min-width:600px) {
+    #maintitle {
+        justify-self: left;
+    }
+
+    .bookGrid, .presentationGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+        grid-template-columns: repeat(5, 1fr);
+        font-size: 1.5em;
+        justify-items: center;
+    }
+}
+
+.hidden {
+    display: none;
+}
